@@ -1,0 +1,8 @@
+- step:
+    name: run_example
+    image: python:3.9
+    environment: azure-westeurope-f2sv2
+    command:
+      - pip install pandas numpy
+      - pip install evidently
+      - python bicycle_demand_monitoring.py
