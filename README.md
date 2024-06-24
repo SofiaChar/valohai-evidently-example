@@ -27,8 +27,7 @@ data_drift.save(save_path)
 valohai.outputs().live_upload("data_drift_dashboard_after_week1.html")
 ```
 
-!!! note
-    Live uploads are also available for normal executions
+_**Note, live uploads are also available for normal executions.**_
 
 Before running the project, you need to have Valohai CLI and utilities installed on your machine. Follow these steps to get started:
 
