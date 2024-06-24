@@ -1,11 +1,22 @@
 # Valohai Evidently Example Project
 
-Welcome to the Valohai Evidently Example Project! This project demonstrates how to use the Evidently library with Valohai to monitor and report on data drift. Follow the instructions below to configure and run the project.
+Welcome to the Valohai Evidently Example Project! 
+
+This project demonstrates how to use the Evidently library with Valohai to monitor and report on data drift. 
+
+Follow the instructions below to configure and run the project.
 
 ## Project Overview
-This project is based on the Evidently blog tutorial and the example notebook from Evidently. It includes two versions of the example:
 
-- bicycle_demand_monitoring.py: A Python script for monitoring bicycle demand. This script monitors bicycle demand and generates an HTML report. The report is saved to a path that Valohai can pick up. Here are the changes made to save the report:
+This project is based on the [Evidently blog tutorial](https://www.evidentlyai.com/blog/tutorial-1-model-analytics-in-production) and the [example notebook](https://github.com/evidentlyai/evidently/blob/main/examples/data_stories/bicycle_demand_monitoring.ipynb) from Evidently. 
+
+_**All the code remains identical to the Evidently example except for the part where the reports are saved. The changes ensure that the reports are saved in a path that Valohai can pick up.**_
+
+This repository includes two versions of the example:
+
+- bicycle_demand_monitoring.py: A Python script for monitoring bicycle demand. This script monitors bicycle demand and generates an HTML report. The report is saved to a path that Valohai can pick up.
+
+Here are the changes made to save the report:
 
 ```python
 import os
@@ -14,7 +25,9 @@ save_path = os.getenv('VH_OUTPUTS_DIR') + '/' + file_name
 report.save(save_path)
 ```
 
-- bicycle_demand_monitoring.ipynb: A Jupyter notebook version of the same example. This Jupyter notebook version of the example introduces `live uploads`, allowing you to upload files to Valohai during the execution. Here's how to save and upload the report:
+- bicycle_demand_monitoring.ipynb: A Jupyter notebook version of the same example. This Jupyter notebook version of the example introduces `live uploads`, allowing you to upload files to Valohai during the execution.
+
+Here's how to save and upload the report:
 
 ```python
 
@@ -27,9 +40,12 @@ data_drift.save(save_path)
 valohai.outputs().live_upload("data_drift_dashboard_after_week1.html")
 ```
 
-_**Note, live uploads are also available for normal executions.**_
+**Note, live uploads are also available for normal executions.**
 
-Before running the project, you need to have Valohai CLI and utilities installed on your machine. Follow these steps to get started:
+## Prerequisites
+Before running the project, you need to have Valohai CLI and utilities installed on your machine. 
+
+Follow these steps to get started:
 
 ### Install Valohai CLI and Utilities
 
